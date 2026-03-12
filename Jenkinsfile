@@ -13,13 +13,6 @@ pipeline {
                 }
             }
         }
-        stage("increment version") {
-            steps {
-                script {
-                    gv.increment()
-                }
-            }
-        }
         stage("build jar") {
             steps {
                 script {
@@ -38,13 +31,6 @@ pipeline {
             steps {
                 script {
                     gv.deployApp()
-                }
-            }
-        }
-        stage("git push") {
-            steps {
-                script {
-                    gv.gitPush()
                 }
             }
         }

@@ -1,27 +1,27 @@
 # Demo Project
 
 ## 📌 Overview
-Dynamically Increment Application version in Jenkins Pipeline
+CD - Deploy Application from Jenkins Pipeline to Compute Cloud Instance (automatically with docker)
 
 ---
 
 ## 🛠 Technologies Used
+- Yandex Cloud
 - Jenkins
 - Docker
-- GitHub
+- Linux
 - Git
 - Java
 - Maven
+- Docker Hub
 
 ---
 
 ## 📖 Project Description
-- Configure CI step: Increment patch version
-- Configure CI step: Build Java application and clean old artifacts
-- Configure CI step: Build Image with dynamic Docker Image Tag
-- Configure CI step: Push Image to private DockerHub repository
-- Configure CI step: Commit version update of Jenkins back to Git repository
-- Configure Jenkins pipeline to not trigger automatically on CI build commit to avoid commit loop
+- Prepare Yandex Cloud Compute Cloud Instance for deployment (Install Docker)
+- Create ssh key credentials for cloud machine server on Jenkins
+- Extend the previous CI pipeline with deploy step to ssh into the remote Compute Cloud instance and deploy newly built image from Jenkins server
+- Configure security group on Compute Cloud Instance to allow access to our web application
 
 ---
 
@@ -35,10 +35,4 @@ http://158.160.227.106:8080/
 ---
 
 ## 📸 Screenshots
-![version increment1](screenshots/1.png)
-![version increment2](screenshots/2.png)
-![version increment3](screenshots/3.png)
-![version increment4](screenshots/4.png)
-
-Commit loop prevention
-![prevention](screenshots/5.png)
+![1](screenshots/1.png)
